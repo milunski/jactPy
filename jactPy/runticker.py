@@ -21,13 +21,17 @@ currencies = tickerfunctions.check_currency(sys.argv[2:])
 # instantiate pretty printing to shell
 pp = pprint.PrettyPrinter(indent=2)
 
-# make the api call to bittrex to return ticker data
+# keep an infinite loop going to constantly make api call to bittrex
 while True:
+    # use list as the data structure for storing ticker data and printing to cli
     output = list()
+    
+    # evaluate all ticker symbols and only retain data of those on bittrex
     for symbol in currencies:
         fetchdata = requests.get(
             f"https://api.bittrex.com/api/v1.1/public/getticker?market={symbol}"
         ).json()
+        # TODO - add %change from lagged value
         if fetchdata['success'] is True:
             bid = fetchdata['result']['Bid']
             ask = fetchdata['result']['Ask']
@@ -37,6 +41,8 @@ while True:
             '    Ask: ' + str(ask) + 
             '    Last: ' + str(last))
             output.append(tick)
+    
+    # all print stuff here... just trying to keep it somewhat pretty
     subprocess.call('clear')
     print(
         'Bittrex Cryptocurrency Exchange Ticker\nhttps://bittrex.com/home/markets'
