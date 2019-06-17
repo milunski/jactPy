@@ -17,6 +17,7 @@ subprocess.call('clear')
 # capture currency symbols from command line
 refreshsec = tickerfunctions.check_refresh(int(sys.argv[1]))
 currencies = tickerfunctions.check_currency(sys.argv[2:])
+sort_currency = currencies.sort()
 
 # instantiate pretty printing to shell
 pp = pprint.PrettyPrinter(indent=2)
@@ -27,7 +28,7 @@ while True:
     output = list()
     
     # evaluate all ticker symbols and only retain data of those on bittrex
-    for symbol in currencies:
+    for symbol in sort_currency:
         fetchdata = requests.get(
             f"https://api.bittrex.com/api/v1.1/public/getticker?market={symbol}"
         ).json()
