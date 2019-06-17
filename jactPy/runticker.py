@@ -48,5 +48,9 @@ while True:
         'Bittrex Cryptocurrency Exchange Ticker\nhttps://bittrex.com/home/markets'
     )
     pp.pprint(output)
-    print(f'refreshing every {refreshsec} seconds...')
+    if refreshsec > 1:
+        print(f'refreshing every {refreshsec} seconds...')
+    else:
+        print(f'refreshing every {refreshsec} second...')
+        
     time.sleep(refreshsec)
