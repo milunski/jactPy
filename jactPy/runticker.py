@@ -33,15 +33,13 @@ while True:
             ask = fetchdata['result']['Ask']
             last = fetchdata['result']['Last']
             tick = str('Crypto: ' + symbol + 
-            '    Bid: ' + str(bid) + 
+            '    Price: ' + str(bid) + 
             '    Ask: ' + str(ask) + 
             '    Last: ' + str(last))
-        else:
-            pass
-        output.append(tick)
+            output.append(tick)
     subprocess.call('clear')
     print(
-        'Bittrex Cryptocurrency Exchange Ticker\nAPI docs @ https://bittrex.github.io/api/v1-1'
+        'Bittrex Cryptocurrency Exchange Ticker\nhttps://bittrex.com/home/markets'
     )
     pp.pprint(output)
     print(f'refreshing every {refreshsec} seconds...')
