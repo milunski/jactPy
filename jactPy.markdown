@@ -6,10 +6,13 @@ As this is meant to be a command line program, it's nothing fancy. Simply specif
 This package was built using Python 3. **Python 2 is not supported**.  
 
 ## Running jactPy
+**Recommended** - Clone this repository and run using the instructions below.
+
 1. From the terminal, navigate to the `jactPy` root directory.
 2. Enter: `python3 runticker.py [refresh interval] [symbol1] [symbol2] [symbol...]`.
-3. Enjoy! Use ctrl-C to kill the program.
+3. Enjoy! Use ctrl-C to kill the program.  
 
-## Example
-Here's an example of using a 5 second refresh rate for Litecoin and Ethereum.  
-`python3 runticker.py 5 BTC-LTC BTC-ETH`
+**Example**: Here's an example of using a 5 second refresh rate for Litecoin and Ethereum.  
+`python3 runticker.py 5 BTC-LTC BTC-ETH`  
+
+*This project was uploaded to PyPI but only for saving the name. Attempts to `pip install` will result in loading a nonfunctioning package.*
