@@ -17,7 +17,7 @@ subprocess.call('clear')
 # capture currency symbols from command line
 refreshsec = tickerfunctions.check_refresh(int(sys.argv[1]))
 currencies = tickerfunctions.check_currency(sys.argv[2:])
-sort_currency = currencies.sort()
+sort_currency = sorted(currencies)
 
 # instantiate pretty printing to shell
 pp = pprint.PrettyPrinter(indent=2)
